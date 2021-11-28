@@ -1,0 +1,27 @@
+<%- include('./template/cabecera'); %>
+
+    <body>
+        <div class="wrapper">
+            
+            <%- include('./template/navbar'); %>
+
+
+                <!-- Cargar Archivo -->
+
+            <h1 id= "Titulo">Lista de productos</h1>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <input type="file"
+                            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,text/comma-separated-values, text/csv, application/csv"
+                            ID="fileSelect" runat="server" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+      
+
+        <%- include('./template/footer', {titulow:'Inicio'}); %>

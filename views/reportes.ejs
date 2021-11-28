@@ -1,0 +1,79 @@
+<%- include('./template/cabecera'); %>
+
+    <body>
+        <div class="wrapper">
+            <%- include('./template/navbar'); %>
+                <h2>Reportes</h2>
+                <div class=" d-grid gap-2 col-6 mx-auto text-center">
+                    <button type="button" class="btn btn-info" style="margin-right:70px"
+                        onclick="mostrarBoton()">Listado de clientes</button>
+                    <button type="button" class="btn btn-warning" onclick="mostrarBoton2()">Ventas por cliente</button>
+                </div>
+
+                <div id="table" style="display: none;">
+                    <table class="table">
+                        <thead>
+                            <tr class="bg-info">
+                                <th scope="col">Cédula</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Nombre completo</th>
+                                <th scope="col">Correo eléctronico</th>
+                                <th scope="col">Dirección</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="table2" style="display: none;">
+                    <table class="table text-center">
+                        <thead>
+                            <tr class="bg-warning">
+                                <th scope="col">Cédula</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Valor total ventas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <script>
+                    var btn_1 = document.getElementById('table');
+                    var btn_2 = document.getElementById('table2');
+
+                    function mostrarBoton() {
+                        btn_2.style.display = 'none';
+                        btn_1.style.display = 'inline';
+                    }
+
+                    function mostrarBoton2() {
+                        btn_1.style.display = 'none';
+                        btn_2.style.display = 'inline';
+                    }
+                </script>
+
+
+
+
+
+
+        </div>
+
+        <%- include('./template/footer', {titulow:'Inicio'}); %>
