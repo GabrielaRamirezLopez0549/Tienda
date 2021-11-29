@@ -17,7 +17,7 @@ const mongoose = require('mongoose');
 
 const uri = `mongodb://localhost:27017/tienda_melocochosa`;
 mongoose.connect(uri,{useNewUrlParser:true, useUnifiedTopology:true})
-.then(() => console.log ('Conectado a la base d e datos'))
+.then(() => console.log ('Conectado a la base de datos'))
 .catch(e => console.log('Error de conexion ',e));
 
 
@@ -38,5 +38,5 @@ app.use('/clientes', require('./router/clientes'));
 
 //Aca escucharemos al servidorExpress
 app.listen(port, ()=>{
-  console.log(`Sitio http://localhost:${port}`);
+    console.log(`Sitio http://localhost:${port}`);
 });

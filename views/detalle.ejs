@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Melocochoso</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <h1 align="center">Detalle Cliente</h1>
+    <div class="container">
+        <% if (error) { %>
+            <p>
+                <%= mensaje %>
+            </p>
+            <a href="/clientes" class="btn btn-dark btn-block">Volver a Clientes</a>
+            <% } %>
+                <% if (!error) { %>
+                    <form id="formularioEditar" data-id="<%= cliente.id  %>">
+                        <div class="form-group form-row">
+                            <div class="col">
+                                <label for="inputEmail4">Cédula</label>
+                                <input type="text" class="form-control my-2" placeholder="Cédula" name="Cedula"
+                                    value="<%= cliente.Cedula%> " id="cedulaInput">
+                            </div>
+                            <div class="col">
+                                <label for="inputEmail4">Teléfono</label>
+                                <input type="text" class="form-control" placeholder="Teléfono" name="Telefono"
+                                    value="<%= cliente.Telefono%>" id="telefonoInput">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-row">
+                            <div class="col">
+                                <label for="inputEmail4">Nombre completo</label>
+                                <input type="text" class="form-control" placeholder="Nombre completo" name="Nombre"
+                                    value="<%= cliente.Nombre%>" id="nombreInput">
+                            </div>
+                            <div class="col">
+                                <label for="inputEmail4">Correo eléctronico</label>
+                                <input type="text" class="form-control" placeholder="Correo eléctronico" name="Correo"
+                                    value="<%= cliente.Correo%>" id="correoInput">
+                            </div>
+                        </div>
+
+                        <div class="form-group form-row">
+                            <div class="col">
+                                <label for="inputEmail4">Dirección</label>
+                                <input type="text" class="form-control" placeholder="Dirección" name="Direccion"
+                                    value="<%= cliente.Direccion%>" id="direccionInput">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 col-6 mx-auto text-center">
+                            <button type="submit" class="btn btn-warning btn-block">
+                                Editar Cliente
+                            </button>
+                        </div>
+                    </form>
+                    <hr>
+                    <button class="btn btn-danger btn-sm mt-2" id="btnEliminar" data-id="<%= cliente.id  %>">
+                        Elminar
+                    </button></td>
+
+
+                    <% } %>
+
+    </div>
+
+    <script>
+        //Aqui se captrua lo que trae el botón eliminar a traves del id="btnEliminar"
+        const btnEliminar = document.querySelector('#btnEliminar')
+        btnEliminar.addEventListener('click', async () => {
+            console.log('Haz dado un click')
+            const id = btnEliminar.dataset.id //Aquí estamos capturando el parametro que estamos pasando a treaves de un atributo en el botón eliminar
+            console.log('id', id)//Aquí nos pinta en consola de navegador el valor del id
+            try {
+                const data = await fetch(`/clientes/${id}`, {
+                    method: 'delete'
+                })
+                const res = await data.json()
+                //console.log(res)
+                if (res.estado) {
+                    window.location.href = '/clientes'
+                } else {
+                    console.log(res)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
+        //  Código de Editar   
+        const formularioEditar = document.querySelector('#formularioEditar')
+        formularioEditar.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            console.log('submit')
+            const cedula = formularioEditar.elements['Cedula'].value
+            const telefono = formularioEditar.elements['Telefono'].value
+            const nombre = document.querySelector('#nombreInput').value
+            const correo = document.querySelector('#correoInput').value
+            const direccion = document.querySelector('#direccionInput').value
+            const id = formularioEditar.dataset.id
+
+            console.log(cedula, telefono, nombre, correo, direccion, id)
+
+            try {
+                console.log('ok')
+                const data = await fetch(`/clientes/${id}`, {
+
+                    method: 'put',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ cedula, telefono, nombre, correo, direccion })
+                })
+                const res = await data.json()
+                console.log('Nop')
+                if (res.estado) {
+                    window.location.href = '/clientes'
+                } else {
+                    console.log(res)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        })
+    </script>
+
+</body>
+
+</html>
