@@ -26,9 +26,11 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 
 
+
 //Aqui vamos a configurar una carpeta publica de archivos estaticos
 //y hacer uso del middleware
 app.use(express.static(__dirname + "/public"));
+app.use('*/css',express.static('public/css'));
 
 //Aqui colocamos la ruta de las rutas de las diferentes secciones
 app.use('/', require('./router/routerweb'));

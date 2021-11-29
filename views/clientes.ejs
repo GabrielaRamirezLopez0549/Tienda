@@ -34,8 +34,8 @@
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto text-center">
                         <button type="submit" class="btn btn-info" style="margin-right:70px">Crear</button>
-                        <button type="button" class="btn btn-outline-primary"
-                            onclick="document.location.reload();">Recargar tabla</button>
+                       <!--  <button type="button" class="btn btn-outline-primary"
+                            onclick="document.location.reload();">Recargar tabla</button> -->
                     </div>
                 </form>
 
@@ -44,7 +44,6 @@
                 <table class="table">
                     <thead>
                         <tr class="bg-info">
-                            <th scope="col">ID</th>
                             <th scope="col">Cédula</th>
                             <th scope="col">Teléfono</th>
                             <th scope="col">Nombre completo</th>
@@ -58,12 +57,12 @@
                             <% arrayClientes.forEach(cliente=> { %>
                                 <tr>
                                     <th scope="row">
-                                        <%= cliente.id %>
 
-                                    </th>
-                                    <td>
                                         <%= cliente.Cedula%>
-                                    </td>
+                                    </th>
+
+
+
                                     <td>
                                         <%= cliente.Telefono%>
                                     </td>
