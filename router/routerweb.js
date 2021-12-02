@@ -16,11 +16,6 @@ router.get("/productos", (req, res) => {
     res.render("productos");
 });
 
-/* //Aqui voy a llamar mi pagina clientes dinamica
-router.get("/clientes", (req, res) => {
-    res.render("clientes");
-}); */
-
 //Aqui voy a llamar mi pagina ventas dinamica
 router.get("/ventas", (req, res) => {
     res.render("ventas");

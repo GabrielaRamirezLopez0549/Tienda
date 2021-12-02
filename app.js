@@ -31,12 +31,20 @@ app.set('views', __dirname + '/views');
 //y hacer uso del middleware
 app.use(express.static(__dirname + "/public"));
 app.use('*/css',express.static('public/css'));
+app.use('*/img',express.static('public/img'));
 
 //Aqui colocamos la ruta de las rutas de las diferentes secciones
 app.use('/', require('./router/routerweb'));
 
 //Aqui llamamos a clientes.js
 app.use('/clientes', require('./router/clientes'));
+
+//Ruta para las paginas no econtradas
+app.use((req,res,next)=>{
+    res.status(404).render("404",{
+        titulo:"404",
+        descripcion:"Página no encontrada"});
+});
 
 //Aca escucharemos al servidorExpress
 app.listen(port, ()=>{
