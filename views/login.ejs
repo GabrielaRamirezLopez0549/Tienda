@@ -6,16 +6,16 @@
           <div class="card border-0 shadow rounded-3 my-5">
             <div class="card-body p-4 p-sm-5">
               <h5 class="card-title text-center mb-5 fw-light fs-5">La genérica Y&G</h5>
-              <form name="form1">
+              <form action= "/login" method="post">
                 <div class="form-floating mb-3">
-                  <input type="text" name="txt" class="form-control" id="floatingInput" placeholder="Usuario">
+                  <input type="text" name="username" class="form-control" id="floatingInput" placeholder="Usuario">
                 </div>
                 <div class="form-floating mb-3">
-                  <input type="password" name="num" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                  <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
                 </div>
   
                 <div class="d-grid">
-                  <button class="btn btn-primary btn-login text-uppercase fw-bold" type="button" onclick="login()">Iniciar
+                  <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit" >Iniciar
                     sesión</button>
                 </div>
               </form>
