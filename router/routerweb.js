@@ -38,10 +38,10 @@ passport.deserializeUser(function (id, done) {
 
 
 //Aqui voy a llamar mi pagina index dinamica
-router.get("/",(req,res,next)=>{
-    if(req.isAuthenticated())return next();
+router.get("/", (req, res, next) => {
+    if (req.isAuthenticated()) return next();
     res.redirect('/login');
-} ,(req, res) => {
+}, (req, res) => {
     res.redirect('/index');
 })
 
