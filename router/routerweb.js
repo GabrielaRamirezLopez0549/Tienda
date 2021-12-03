@@ -62,10 +62,10 @@ router.get("/index", (req, res) => {
     res.render("index");
 })
 
-//Aqui voy a llamar mi pagina productos dinamica
+/*  //Aqui voy a llamar mi pagina productos dinamica
 router.get("/productos", (req, res) => {
     res.render("productos");
-});
+});  */
 
 //Aqui voy a llamar mi pagina ventas dinamica
 router.get("/ventas", (req, res) => {
