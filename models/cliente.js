@@ -8,11 +8,12 @@ const clienteSchema = new Schema({
     Telefono: Number,
     Nombre: String,
     Correo: String,
-    Direccion: String
+    Direccion: String,
+    Ventas: String
 });
 
 //Creacion del modelo
 
-const Cliente = mongoose.model('Cliente',clienteSchema);
+const Cliente = mongoose.model('Cliente', clienteSchema);
 
 module.exports = Cliente;

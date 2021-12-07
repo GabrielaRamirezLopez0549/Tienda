@@ -91,6 +91,8 @@ app.use('/', require('./router/routerweb'));
 app.use('/clientes', require('./router/clientes'));
 //Aqui llamamos a productos.js
 app.use('/productos', require('./router/productos'));
+//Aqui llamamos a reportes.js
+app.use('/reportes', require('./router/reportes'));
 
 
 

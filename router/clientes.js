@@ -15,6 +15,8 @@ router.get('/', async(req, res)=>{
 })
 
 
+
+
 //Aqui  vamos a transportar los datos de las cajas de la página dinámica a la base de datos  
 router.post('/', async(req, res)=>{
     const body = req.body

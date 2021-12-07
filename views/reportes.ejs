@@ -11,7 +11,7 @@
                 </div>
 
                 <div id="table" style="display: none;">
-                    <table class="table">
+                    <table class="table ">
                         <thead>
                             <tr class="bg-info">
                                 <th scope="col">Cédula</th>
@@ -19,17 +19,35 @@
                                 <th scope="col">Nombre completo</th>
                                 <th scope="col">Correo eléctronico</th>
                                 <th scope="col">Dirección</th>
+                              
                             </tr>
                         </thead>
-
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
-                            </tr>
+                            <% if (arrayClientes.length> 0 ) { %>
+                                <% arrayClientes.forEach(cliente=> { %>
+                                    <tr>
+                                        <th scope="row">
+    
+                                            <%= cliente.Cedula%>
+                                        </th>
+                                        <td>
+                                            <%= cliente.Telefono%>
+                                        </td>
+                                        <td>
+                                            <%= cliente.Nombre%>
+                                        </td>
+                                        <td>
+                                            <%= cliente.Correo%>
+                                        </td>
+                                        <td>
+                                            <%= cliente.Direccion%>
+                                        </td>
+                                       
+                                    </tr>
+    
+                                    <% }) %>
+                                        <% } %>
+    
                         </tbody>
                     </table>
                 </div>
@@ -45,10 +63,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
+                                <% if (arrayClientes.length> 0 ) { %>
+                                    <% arrayClientes.forEach(cliente=> { %>
+                                <th scope="row"><%= cliente.Cedula%></th>
+                                <td><%= cliente.Nombre%></td>
+                                <td><%= cliente.Ventas%></td>
                             </tr>
+                            <% }) %>
+                            <% } %>
                         </tbody>
                     </table>
                 </div>
