@@ -9,6 +9,12 @@
                 <!-- Cargar Archivo -->
 
                 <h1 id="Titulo">Lista de productos</h1>
+                <form action="/uploadfile" enctype="multipart/form-data" method="post">
+                    <input type="file" name="uploadfile" accept='csv'>
+                    <input type="submit" value="Upload CSV" class="btn btn-success">
+                    <button type="button" class="btn btn-outline-primary"
+                        onclick="document.location.reload();">Recargar</button>
+                </form>
                 <table class="table text-center">
                     <thead>
                         <tr class="bg-info">
