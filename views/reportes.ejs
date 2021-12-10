@@ -1,6 +1,10 @@
 <%- include('./template/cabecera'); %>
 
+    <!--muestra la informacion de los clientes y las compras realizadas-->
+
+
     <body>
+        <!--Primera tabla donde muestra los datos del cliente-->
         <div class="wrapper">
             <%- include('./template/navbar'); %>
                 <h2>Reportes</h2>
@@ -19,7 +23,7 @@
                                 <th scope="col">Nombre completo</th>
                                 <th scope="col">Correo eléctronico</th>
                                 <th scope="col">Dirección</th>
-                              
+
                             </tr>
                         </thead>
                         <tbody>
@@ -27,7 +31,7 @@
                                 <% arrayClientes.forEach(cliente=> { %>
                                     <tr>
                                         <th scope="row">
-    
+
                                             <%= cliente.Cedula%>
                                         </th>
                                         <td>
@@ -42,16 +46,16 @@
                                         <td>
                                             <%= cliente.Direccion%>
                                         </td>
-                                       
+
                                     </tr>
-    
+
                                     <% }) %>
                                         <% } %>
-    
+
                         </tbody>
                     </table>
                 </div>
-
+                <!--Segunda tabla donde muestra el valor total de ventas-->
                 <div id="table2" style="display: none;">
                     <table class="table text-center">
                         <thead>
@@ -65,29 +69,35 @@
                             <tr>
                                 <% if (arrayClientes.length> 0 ) { %>
                                     <% arrayClientes.forEach(cliente=> { %>
-                                <th scope="row"><%= cliente.Cedula%></th>
-                                <td><%= cliente.Nombre%></td>
-                                <td><%= cliente.Ventas%></td>
+                                        <th scope="row">
+                                            <%= cliente.Cedula%>
+                                        </th>
+                                        <td>
+                                            <%= cliente.Nombre%>
+                                        </td>
+                                        <td>
+                                            <%= cliente.Ventas%>
+                                        </td>
                             </tr>
                             <% }) %>
-                            <% } %>
+                                <% } %>
                         </tbody>
                     </table>
                 </div>
 
-
+                <!--Script donde se ve los botones dinamicos de la pagina-->
                 <script>
                     var btn_1 = document.getElementById('table');
                     var btn_2 = document.getElementById('table2');
 
                     function mostrarBoton() {
-                        btn_2.style.display = 'none';
-                        btn_1.style.display = 'inline';
+                        btn_2.style.display = 'none';//Al dar clic la tabla 1 se muestra 
+                        btn_1.style.display = 'inline';//La tabla 2 no se muestra
                     }
 
                     function mostrarBoton2() {
-                        btn_1.style.display = 'none';
-                        btn_2.style.display = 'inline';
+                        btn_1.style.display = 'none';//La tabla 1 no se muestra
+                        btn_2.style.display = 'inline'; // Al dar clic la tabla dos se muestra
                     }
                 </script>
 

@@ -1,7 +1,11 @@
 //Aqui vamos a crear un servidor con express
 const express = require("express");
+
+// extrae toda la parte del cuerpo de una secuencia de solicitud entrante y la expone en req.body
 const bodyParser = require('body-parser');
+
 const app = express();
+//Se declara el puerto 344 del localhost
 const port = 344;
 const path = require('path')
 
@@ -19,8 +23,9 @@ app.use(bodyParser.json())
 //Aqui vamos a conectar la base de datos
 const mongoose = require('mongoose');
 
-
+//URL para conectar con la base de datos
 const uri = `mongodb://localhost:27017/tienda_melocochosa`;
+
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Conectado a la base de datos'))
@@ -45,15 +50,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage }) 
 app.use(bodyParser.urlencoded({ extended: false }))
 
+//Crea el archivo csv con un nombre y un numero correspondiente al archivo
 app.post('/uploadfile', upload.single("uploadfile"), (req, res) => {
     UploadCsvDataToMongoDB(__dirname + '/uploads/' + req.file.filename);
     console.log('CSV arriba ');
 });
  
+// Conexion con mongoDB para conectar subir el archivo csv 
 function UploadCsvDataToMongoDB(filePath) {
-
-
-    // Conexion con mongoDB para conectar subir el archivo csv 
     csvtojson()
         .fromFile("productos.csv")
         .then(csvData => {

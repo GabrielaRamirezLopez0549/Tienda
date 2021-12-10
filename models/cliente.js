@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-//Aqui el esquema de datos
+//Aqui el esquema de datos de clientes
 const clienteSchema = new Schema({
     Cedula: Number,
     Telefono: Number,

@@ -1,11 +1,21 @@
+//Se utiliza para direccionamiento y ruteo
 const express = require('express')
 const router = express.Router();
+
+//Se utiliza gestionar la autenticación 
 const passport = require('passport');
+
+//se utiliza para calcular los datos de visitantes, sesiones y campañas
 const cookie = require('cookie-parser');
+
+//almacena los datos de sesión en el servidor; sólo guarda el ID de sesión en la propia cookie
 const session = require('express-session');
+
+//Trabaja en combinación de Connect y Express
 const passportlocal = require('passport-local').Strategy;
 
 
+// Aqui se configura las cookies del sitio
 router.use(express.urlencoded({ extended: true }));
 router.use(cookie('Mi ultra secreto'));
 router.use(session({
@@ -17,6 +27,7 @@ router.use(session({
 router.use(passport.initialize());
 router.use(passport.session());
 
+//Aqui se configura en un archivo plano el usuario y contraseña para acceder
 passport.use(new passportlocal(function (username, password, done) {
 
     if (username === "12" && password === "12")
@@ -24,9 +35,8 @@ passport.use(new passportlocal(function (username, password, done) {
 
     done(null, false);
 
-
-
 }));
+
 
 passport.serializeUser(function (user, done) {
     done(null, user.id);

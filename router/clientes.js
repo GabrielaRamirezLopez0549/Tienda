@@ -1,7 +1,10 @@
 const express = require ('express');
 const router =express.Router();
 
+//Aqui se llama el archivo js de clientes con las variables de la base de datos de clientes
 const Cliente =require('../models/cliente');
+
+//Aqui se hace el ruteo, llama los datos de la base de datos y se muestra el ejs de clientes con los datos correspondientes
 router.get('/', async(req, res)=>{
     try{
         const arrayClientesDB = await Cliente.find();
