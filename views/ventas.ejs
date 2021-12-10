@@ -3,6 +3,146 @@
     <body>
         <div class="wrapper">
             <%- include('./template/navbar'); %>
-                <h2>Ventas</h2>
+                <h2 style="margin-bottom:40px">Ventas</h2>
+
+                <form>
+                    <div class="form-row">
+                        <div class="col-5" style="margin-right:18px">
+                            <label for="inputAddress">Cedula</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Recipient's username"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Button</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Cliente</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Consecutivo</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                    </div>
+                </form>
+
+                <hr>
+
+                <form style="margin-top:40px">
+                    <div class="form-row">
+                        <div class="col-5" style="margin-right:18px">
+                            <label for="inputAddress">Codigo producto</label>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Recipient's username"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Consultar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Nom producto</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Cantidad</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Valor total</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                    </div>
+                </form>
+
+                <form style="margin-top:10px">
+                    <div class="form-row">
+                        <div class="col-5" style="margin-right:18px">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Recipient's username"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Consultar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="margin-right:18px">
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                    </div>
+                </form>
+
+                <form style="margin-top:10px">
+                    <div class="form-row">
+                        <div class="col-5" style="margin-right:18px">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Recipient's username"
+                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">Consultar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col" style="margin-right:18px">
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                    </div>
+                </form>
+
+                <hr>
+
+                <form style="margin-top:40px">
+                    <div class="form-row">
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Total venta</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Total IVA</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputAddress">Total venta con IVA</label>
+                            <input type="text" class="form-control" placeholder="Zip">
+                        </div>
+                    </div>
+                </form>
+
+                <form style="margin-top:40px">
+                    <div class="form-row">
+                        <div class="col" style="margin-right:18px">
+                            <label for="inputState">Ciudad</label>
+                            <select id="inputState" class="form-control">
+                                <option selected>Seleccione la ciudad...</option>
+                                <option>Cali</option>
+                                <option>Medellín</option>
+                                <option>Bogotá</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="margin-right:18px">Confirmar</button>
+                       
+                </form>
+
+
+
         </div>
         <%- include('./template/footer', {titulow:'Inicio'}); %>
