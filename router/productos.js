@@ -12,7 +12,7 @@ router.get('/', async(req, res)=>{
         res.render("productos",{
             arrayProductos: arrayProductosDB
         })
-    }catch(error){
+    }catch(error){ 
         console.log(error)
     }
 })

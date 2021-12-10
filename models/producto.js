@@ -11,7 +11,7 @@ const productosSchema = new Schema({
     ivacompra: Number,
     precio_venta: Number
 });
-
+ 
 //Creacion del modelo
 
 const Producto= mongoose.model('Producto',productosSchema);

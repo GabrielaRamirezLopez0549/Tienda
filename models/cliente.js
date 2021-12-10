@@ -11,7 +11,7 @@ const clienteSchema = new Schema({
     Direccion: String,
     Ventas: String
 });
-
+ 
 //Creacion del modelo
 
 const Cliente = mongoose.model('Cliente', clienteSchema);

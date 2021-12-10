@@ -70,7 +70,7 @@ router.post("/login", passport.authenticate('local', {
 //Aqui voy a llamar mi pagina index dinamica
 router.get("/index", (req, res) => {
     res.render("index");
-})
+}) 
 
 /*  //Aqui voy a llamar mi pagina productos dinamica
 router.get("/productos", (req, res) => {

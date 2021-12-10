@@ -13,7 +13,7 @@ router.get('/', async(req, res)=>{
         console.log(arrayClientesDB)
         res.render("reportes",{
             arrayClientes: arrayClientesDB
-        })
+        }) 
     }catch(error){
         console.log(error)
     } 
